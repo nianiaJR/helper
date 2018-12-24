@@ -1,0 +1,28 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "description": "工具函数集合",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nianiaJR/helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nianiaJR/helper/issues"
+  },
+  "homepage": "https://github.com/nianiaJR/helper#readme",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "@babel/core": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "@babel/preset-env": "^7.1.0"
+  }
+}
