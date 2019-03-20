@@ -8,7 +8,6 @@ module.exports = {
     globals: {
         "NODE_ENV": "test",
     },
-    verbose: true,
     transform: {
         "^.+\\.(t|j)s$": "babel-jest"
     }
