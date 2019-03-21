@@ -16,6 +16,25 @@ function debounce(fn, wait) {
     }
 }
 
+function throttle(fn, interval, immediate) {
+    let timer;
+
+    return function throttled(...rest) {
+        if (timer) {
+            return;
+        }
+        if (immediate) {
+            fn.apply(this, rest)
+            return
+        }
+        timer = setTimeout(() => {
+            timer = null
+            fn.apply(this, rest)
+        }, interval)
+    }
+}
+
 export {
-  debounce
+    debounce,
+    throttle
 }
