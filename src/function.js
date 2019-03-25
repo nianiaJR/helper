@@ -34,7 +34,32 @@ function throttle(fn, interval, immediate) {
     }
 }
 
+function promiseAll(requests) {
+    const arr = Array(requests.length);
+    let right = 0;
+    let error = 0;
+    return new Promise((resolve, reject) => {
+        requests.forEach((request, index) => {
+            request.then(data => {
+                arr[index] = data;
+                right++;
+            }, err => {
+                arr[index] = err;
+                error++;
+            }).finally(() => {
+                if (right + error === arr.length) {
+                    if (right === arr.length) {
+                        return resolve(arr)
+                    }
+                    return reject(arr)
+                }
+            })
+        })
+    })
+}
+
 export {
+    promiseAll,
     debounce,
     throttle
 }
